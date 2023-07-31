@@ -7,7 +7,12 @@ const app = express();
 app.use(express.json());
 
 // Enable CORS
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+    methods: ["GET", "POST", "UPDATE", "DELETE", "PUT", "PATCH"],
+  })
+);
 
 require("dotenv").config();
 
